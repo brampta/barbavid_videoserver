@@ -1,5 +1,5 @@
 <?php
-include('conf.php');
+include(dirname(dirname(__FILE__)).'/settings.php');
 
 
 if(!isset($_GET['video']) || !isset($_GET['chunk']))

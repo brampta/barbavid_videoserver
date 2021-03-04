@@ -1,9 +1,8 @@
 <?php
-include('conf.php');
+include(dirname(dirname(__FILE__)).'/settings.php');
 
 
 
-include('allowed_ips.php');
 //echo 'this IP: '.$_SERVER['REMOTE_ADDR'].'<br />';
 //echo 'allowed IPs: ';
 //print_r($allowed_ips);

@@ -1,6 +1,6 @@
 <?php
-include('conf.php');
-include('curl.php');
+include(dirname(dirname(__FILE__)).'/settings.php');
+include(dirname(dirname(__FILE__)).'/include/curl.php');
 
 $green='<span style="color:green;">';
 $red='<span style="color:red;">';
@@ -32,7 +32,7 @@ foreach($find_vids as $key => $value)
 	while($video_exists=='' && $countturns<$maxturns)
 	{
 		$countturns++;
-		$video_exists=get_content_of_url($path_to_main_server.'element_exists.php?hash='.urlencode($lastchunk).'&index_file='.urlencode('videos_index.dat'));
+		$video_exists=get_content_of_url($path_to_main_server.'curl/element_exists.php?hash='.urlencode($lastchunk).'&index_file='.urlencode('videos_index.dat'));
 	}
 	if($video_exists!='true' && $video_exists!='false')
 	{die('error, lost connection with main server (3)');}

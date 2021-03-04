@@ -1,11 +1,11 @@
 <?php
 //proc_nice(19);
-include('conf.php');
+include(dirname(dirname(__FILE__)).'/settings.php');
 $showdebuginfo=0;
 
 
 
-include('curl.php');
+include(dirname(dirname(__FILE__)).'/include/curl.php');
 
 
 if(!isset($_GET['video']) || !isset($_GET['chunk']))
@@ -24,7 +24,7 @@ $maxturns=3;
 while($rezu=='' && $countturns<$maxturns)
 {
     $countturns++;
-    $rezu=get_content_of_url($path_to_main_server.'checkkey.php?kn='.$keyname.'&k='.$_GET['key']);
+    $rezu=get_content_of_url($path_to_main_server.'curl/checkkey.php?kn='.$keyname.'&k='.$_GET['key']);
 }
 if($rezu!='ok')
 {die('invalid key...');}
