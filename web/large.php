@@ -1,4 +1,6 @@
 <?php
+
+/*
 include(dirname(dirname(__FILE__)).'/settings.php');
 
 
@@ -18,12 +20,11 @@ $video_path=$videos_vault_dir.'/'.$first_letter.'/'.$second_letter.'/'.$_GET['vi
 
 header('Content-Type: image/png');
 readfile($video_path);
+*/
 
+if(!isset($_GET['video']) || !isset($_GET['chunk']) || !isset($_GET['w']) || !isset($_GET['h']))
+{die('missing vars...');}
 
-
-
-
-
-
-
-?>
+include(dirname(dirname(__FILE__)).'/include/init.php');
+$size=array($_GET['w'],$_GET['h']);
+include(BP.'/include/thumbalizer/thumbalize.php');
