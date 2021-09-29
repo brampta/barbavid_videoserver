@@ -9,6 +9,7 @@ function get_content_of_url($url){
     curl_setopt($ohyeah, CURLOPT_TIMEOUT, 30);
     curl_setopt($ohyeah, CURLOPT_URL, $url);
     curl_setopt($ohyeah, CURLOPT_SSL_VERIFYPEER, false);
+	 curl_setopt($ohyeah, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ohyeah, CURLOPT_USERAGENT, "Curl Barbavid");
     
     $dataz = curl_exec($ohyeah);
@@ -26,6 +27,7 @@ function curl_post($url,$data){
     curl_setopt($ohyeah, CURLOPT_TIMEOUT, 30);
     curl_setopt($ohyeah, CURLOPT_URL, $url);
     curl_setopt($ohyeah, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ohyeah, CURLOPT_SSL_VERIFYHOST, false);
     curl_setopt($ohyeah, CURLOPT_USERAGENT, "Curl Barbavid");
 
     curl_setopt($ohyeah, CURLOPT_POST, TRUE);
