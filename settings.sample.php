@@ -13,7 +13,7 @@ $allowed_ips=array(
     'x.x.x.x', //main server ip
 );
 
-$allowed_image_size=array(
+$allowed_image_sizes=array(
     array(390,220),
     array(960,540),
 );
