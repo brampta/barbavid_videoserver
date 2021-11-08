@@ -6,13 +6,13 @@ function get_video_original_image_path($video,$chunk){
     //find image, look for orig, if not available look for large, then for thumb
     global $videos_vault_dir;
     
-    $look_for_sizes=array('orig','large','thumb');
+    $look_for_sizes=array('orig.jpg','large.png','thumb.png');
     $image_file=false;
     
     foreach($look_for_sizes as $size){
         $dotinchunk=strripos($chunk,'.');
         $dotlesschunk=substr($chunk,0,$dotinchunk);
-        $imagefilename=$dotlesschunk.'_'.$size.'.jpg';
+        $imagefilename=$dotlesschunk.'_'.$size;
         $first_letter=substr($video,0,1);
         $second_letter=substr($video,1,1);
         $image_file_path=$videos_vault_dir.'/'.$first_letter.'/'.$second_letter.'/'.$video.'/'.$imagefilename;
