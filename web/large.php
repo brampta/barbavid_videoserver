@@ -4,4 +4,4 @@ if(!isset($_GET['video']) || !isset($_GET['chunk']))
 
 include(dirname(dirname(__FILE__)).'/include/init.php');
 include(BP.'/include/thumbalizer.php');
-get_image($_GET['video'],$_GET['chunk'],800,800);
+get_image($_GET['video'],$_GET['chunk'],960,540);
